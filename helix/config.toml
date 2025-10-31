@@ -1,0 +1,24 @@
+theme = "onedark"
+
+[editor]
+scrolloff = 15
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-modification-indicator", "read-only-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[keys.insert]
+j = { k = "normal_mode" } # map `jk` to exit insert mode
