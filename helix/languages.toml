@@ -1,8 +1,31 @@
 [[language]]
+name = "c"
+scope = "source.c"
+injection-regex = "c"
+file-types = ["c", "h"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ {name = "clangd", except-features = [ "format" ]} ]
+formatter = { command = "clang-format" }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
 name = "python"
 language-servers = [ "pyright", "ruff" ]
 formatter = { command = "ruff", args = ["format", "--line-length", "100", "-"] }
 auto-format = true
+
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
+
+[[language]]
+name = "json"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "json" ] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
+auto-format = true
