@@ -5,10 +5,12 @@ injection-regex = "c"
 file-types = ["c", "h"]
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
-language-servers = [ {name = "clangd", except-features = [ "format" ]} ]
-formatter = { command = "clang-format" }
+language-servers = [ {name = "clangd", except-features = ["format"]} ]
+# language-servers = [ "clangd" ]
+indent = { tab-width = 4, unit = "    " }
+# formatter = { command = "clang-format", args = ["--style=WebKit"] }
+formatter = { command = "clang-format", args = ["--style={BasedOnStyle: llvm, IndentWidth: 4}"] }
 auto-format = true
-indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "python"
